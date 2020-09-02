@@ -29,4 +29,9 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
     </bean>
     
+    <!-- 패키지 -->
+    <context:component-scan base-package="com.kubg.domain"/>
+    <context:component-scan base-package="com.kubg.persistence"/>
+    <context:component-scan base-package="com.kubg.servcie"/>
+    
 </beans>
