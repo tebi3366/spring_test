@@ -29,21 +29,20 @@ public class MemberController {
 	// 회원 가입 get
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public void getSignup() throws Exception {
-	 logger.info("get signup");
+		logger.info("get signup");
 	}
 
 	// 회원 가입 post
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String postSignup(MemberVO vo) throws Exception {
-	 logger.info("post signup");
-	  
-	 String inputPass = vo.getUserPass();
-	 String pass = passEncoder.encode(inputPass);
-	 vo.setUserPass(pass);
-
-	 service.signup(vo);
-
-	 return "redirect:/";
-	}
-		
+		logger.info("post signup");
+			
+		String inputPass = vo.getUserPass();
+		String pass = passEncoder.encode(inputPass);  // 비밀번호를 암호화
+		vo.setUserPass(pass);  // 암호화된 비밀번호를 userPass에 저장
+	
+		service.signup(vo);
+	
+		return "redirect:/";
+	}		
 }
