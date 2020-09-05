@@ -14,7 +14,7 @@
 
 	<c:if test="${member.verify == 9 }">
 		<li>
-			<a href="/admin/<inde></inde>x">관리자 화면</a>
+			<a href="/admin/index">관리자 화면</a>
 		</li>
 	</c:if>
  <li>
